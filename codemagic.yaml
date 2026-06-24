@@ -92,7 +92,6 @@ workflows:
     publishing:
       app_store_connect:
         auth: integration
-        # 在 App Store Connect 创建应用后，取消下一行注释并填入数字 Apple ID
-        # app_id: 6782323942
+        app_id: 6783641059
         submit_to_testflight: true
         submit_to_app_store: false

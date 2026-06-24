@@ -185,6 +185,7 @@ IPA 仍会出现在 Codemagic **Artifacts** 里，可手动用 Transporter 上�
   "asc_integration": "huanqi-asc",
   "privacy_policy_url": "https://hellotita.top/mamikey/privacy",
   "support_url": "https://hellotita.top/mamikey/support",
+  "asc_app_id": "6783641059",
   "status": "立项"
 }
 ```
