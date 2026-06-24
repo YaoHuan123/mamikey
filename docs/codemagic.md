@@ -21,8 +21,8 @@
 
 | Codemagic 引用名 | Bundle ID |
 |------------------|-----------|
-| `mami-key-appstore` | `io.github.YaoHuan123.mami-key` |
-| `mami-key-keyboard-appstore` | `io.github.YaoHuan123.mami-key.keyboard` |
+| `mamikey-appstore` | `io.github.YaoHuan123.mami-key` |
+| `mamikey-keyboard-appstore` | `io.github.YaoHuan123.mami-key.keyboard` |
 
 ## 3. Codemagic 控制台配置
 
@@ -90,7 +90,7 @@ git checkout ios   # CI 构建分支
   "repo_path": "E:\\apps\\mami key",
   "git_branch": "ios",
   "codemagic_workflow_id": "mami-key-ios-appstore",
-  "codemagic_profile": "mami-key-appstore",
+  "codemagic_profile": "mamikey-appstore",
   "codemagic_certificate": "app-common",
   "asc_integration": "huanqi-asc",
   "privacy_policy_url": "https://hellotita.top/mami-key/privacy",
@@ -99,7 +99,7 @@ git checkout ios   # CI 构建分支
 }
 ```
 
-键盘扩展描述文件 `mami-key-keyboard-appstore` 需在 Codemagic 单独上传（台账字段可写在 review_notes）。
+键盘扩展描述文件 `mamikey-keyboard-appstore` 需在 Codemagic 单独上传（台账字段可写在 review_notes）。
 
 ## 8. 常见问题
 

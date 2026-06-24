@@ -50,7 +50,7 @@
 - [x] `scripts/codemagic-prebuild.sh`
 - [x] `docs/codemagic.md` 签名与上架说明
 - [ ] Apple Developer 创建 App ID ×2 + App Group
-- [ ] Codemagic 上传描述文件 `mami-key-appstore` / `mami-key-keyboard-appstore`
+- [ ] Codemagic 上传描述文件 `mamikey-appstore` / `mamikey-keyboard-appstore`
 - [x] Git 仓库 `git@github.com:YaoHuan123/mamikey.git` + `ios` 分支已推送
 
 ### 主 App（MamiKey）
