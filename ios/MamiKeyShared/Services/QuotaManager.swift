@@ -1,25 +1,25 @@
 import Foundation
 
-public enum QuotaManager {
-  public static let dailyFreeLimit = 5
+enum QuotaManager {
+  static let dailyFreeLimit = 5
 
   private static var defaults: UserDefaults? {
     UserDefaults(suiteName: SharedSettings.appGroupID)
   }
 
-  public static var remainingToday: Int {
+  static var remainingToday: Int {
     if SharedSettings.isSubscribed { return .max }
     resetIfNeeded()
     let used = defaults?.integer(forKey: SharedSettings.Key.dailyUsageCount) ?? 0
     return max(0, dailyFreeLimit - used)
   }
 
-  public static var canGenerate: Bool {
+  static var canGenerate: Bool {
     SharedSettings.isSubscribed || remainingToday > 0
   }
 
   @discardableResult
-  public static func consumeOne() -> Bool {
+  static func consumeOne() -> Bool {
     if SharedSettings.isSubscribed { return true }
     resetIfNeeded()
     guard remainingToday > 0 else { return false }

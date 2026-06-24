@@ -1,13 +1,13 @@
 import Foundation
 
-public enum HistoryStore {
+enum HistoryStore {
   private static let maxCount = 20
 
   private static var defaults: UserDefaults? {
     UserDefaults(suiteName: SharedSettings.appGroupID)
   }
 
-  public static func load() -> [HistoryEntry] {
+  static func load() -> [HistoryEntry] {
     guard
       let data = defaults?.data(forKey: SharedSettings.Key.historyJSON),
       let entries = try? JSONDecoder().decode([HistoryEntry].self, from: data)
@@ -17,7 +17,7 @@ public enum HistoryStore {
     return entries
   }
 
-  public static func append(_ entry: HistoryEntry) {
+  static func append(_ entry: HistoryEntry) {
     var entries = load()
     entries.insert(entry, at: 0)
     if entries.count > maxCount {
@@ -26,7 +26,7 @@ public enum HistoryStore {
     save(entries)
   }
 
-  public static func markSelected(entryID: UUID, reply: String) {
+  static func markSelected(entryID: UUID, reply: String) {
     var entries = load()
     guard let index = entries.firstIndex(where: { $0.id == entryID }) else { return }
     let old = entries[index]

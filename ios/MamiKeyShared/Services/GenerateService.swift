@@ -1,13 +1,13 @@
 import Foundation
 
-public enum GenerateError: LocalizedError {
+enum GenerateError: LocalizedError {
   case quotaExceeded
   case emptyMessage
   case network(String)
   case parseFailed
   case allFiltered
 
-  public var errorDescription: String? {
+  var errorDescription: String? {
     switch self {
     case .quotaExceeded:
       return "今日免费次数已用完，请在主 App 开通订阅或明日再试。"
@@ -23,8 +23,8 @@ public enum GenerateError: LocalizedError {
   }
 }
 
-public enum GenerateService {
-  public static func generate(_ request: GenerateRequest) async throws -> [String] {
+enum GenerateService {
+  static func generate(_ request: GenerateRequest) async throws -> [String] {
     let trimmed = request.message.trimmingCharacters(in: .whitespacesAndNewlines)
     guard !trimmed.isEmpty else { throw GenerateError.emptyMessage }
     guard QuotaManager.canGenerate else { throw GenerateError.quotaExceeded }
