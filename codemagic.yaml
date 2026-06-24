@@ -31,8 +31,6 @@ workflows:
         XCODE_SCHEME: MamiKey
         XCODE_PROJECT_DIR: ios
         APP_VERSION: "0.1.0"
-        # 在 App Store Connect 创建应用后填入数字 Apple ID（App 信息页可见）
-        ASC_APP_ID: ""
       xcode: latest
 
     triggering:
@@ -94,7 +92,7 @@ workflows:
     publishing:
       app_store_connect:
         auth: integration
-        # 创建 ASC 应用后取消注释并填入 Apple ID，或设置环境变量 ASC_APP_ID
-        # app_id: $ASC_APP_ID
+        # 在 App Store Connect 创建应用后，取消下一行注释并填入数字 Apple ID
+        # app_id: 6782323942
         submit_to_testflight: true
         submit_to_app_store: false

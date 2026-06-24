@@ -123,13 +123,13 @@ git checkout ios   # CI 构建分支
    - SKU：`mamikey`（任意唯一字符串）
    - 用户访问权限：完全访问
 3. 创建后进入 **App 信息**，记下 **Apple ID**（纯数字，如 `6782323942`）
-4. （可选）在 `codemagic.yaml` 的 `publishing` 里填入：
+4. （可选）在 `codemagic.yaml` 的 `publishing.app_store_connect` 里取消注释并填入：
 
 ```yaml
-app_id: 你的AppleID数字
+app_id: 你的AppleID数字   # 如 6782323942
 ```
 
-或在 Codemagic 环境变量设置 `ASC_APP_ID`。
+不要在 `vars` 里留空的 `ASC_APP_ID`，Codemagic 会校验失败。
 
 5. 重新触发构建，或仅重新运行 **Publishing** 步骤
 
