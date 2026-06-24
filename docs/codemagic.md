@@ -40,19 +40,19 @@
    - 选择 `codemagic.yaml`
    - Workflow：`mami-key-ios-appstore`
 
-## 4. Git 分支
+## 4. Git 仓库
 
-Codemagic 在 **`ios` 分支 push** 时触发（与 hello me 一致）：
+远程：`git@github.com:YaoHuan123/mamikey.git`
+
+| 分支 | 用途 |
+|------|------|
+| `ios` | Codemagic 自动构建（push 触发） |
+| `main` | 默认主分支 |
 
 ```bash
-cd "E:\apps\mami key"
-git init
-git add .
-git commit -m "feat: iOS MVP + Codemagic"
-git branch -M main
-git checkout -b ios
-git remote add origin <你的仓库 URL>
-git push -u origin ios
+git clone git@github.com:YaoHuan123/mamikey.git
+cd mamikey
+git checkout ios   # CI 构建分支
 ```
 
 ## 5. 构建流程说明
