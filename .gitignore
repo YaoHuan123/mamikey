@@ -1,0 +1,9 @@
+# Codemagic / Git 忽略
+.DS_Store
+*.xcuserstate
+xcuserdata/
+DerivedData/
+*.ipa
+*.dSYM.zip
+.env
+.env.*
