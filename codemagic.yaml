@@ -92,6 +92,6 @@ workflows:
     publishing:
       app_store_connect:
         auth: integration
-        app_id: 6783641059
+        # ASC Apple ID: 6783641059（Codemagic 按 IPA 内 Bundle ID 自动匹配，无需 app_id 字段）
         submit_to_testflight: true
         submit_to_app_store: false
