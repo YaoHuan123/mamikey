@@ -25,13 +25,19 @@ FG = (255, 255, 255)
 
 
 def draw_icon(size: int) -> Image.Image:
-    img = Image.new("RGBA", (size, size), BG)
+    img = Image.new("RGB", (size, size), BG)
     draw = ImageDraw.Draw(img)
     margin = size * 0.18
+    # App Store icons must be fully opaque (no alpha channel)
+    inner = (
+        int(BG[0] * 0.85 + 255 * 0.15),
+        int(BG[1] * 0.85 + 255 * 0.15),
+        int(BG[2] * 0.85 + 255 * 0.15),
+    )
     draw.rounded_rectangle(
         (margin, margin, size - margin, size - margin),
         radius=size * 0.14,
-        fill=(255, 255, 255, 40),
+        fill=inner,
     )
     font_size = int(size * 0.42)
     try:
@@ -45,10 +51,16 @@ def draw_icon(size: int) -> Image.Image:
     return img
 
 
+def save_icon(img: Image.Image, path: Path) -> None:
+    # Force opaque RGB PNG (no alpha) — required for 1024 App Store icon
+    rgb = img.convert("RGB")
+    rgb.save(path, format="PNG")
+
+
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     for name, px in ICONS:
-        draw_icon(px).save(OUT / name, format="PNG")
+        save_icon(draw_icon(px), OUT / name)
         print(f"Wrote {name} ({px}x{px})")
 
 
