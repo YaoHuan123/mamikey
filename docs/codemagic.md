@@ -11,13 +11,13 @@
 ### 修复步骤（按顺序）
 
 1. **Identifiers → App IDs**  
-   - `io.github.YaoHuan123.mamikey` → Capabilities → **App Groups** 已开启 → 勾选 `group.io.github.YaoHuan123.mamikey`  
+   - `io.github.com.YaoHuan123.mamikey` → Capabilities → **App Groups** 已开启 → 勾选 `group.io.github.YaoHuan123.mamikey`  
    - `io.github.YaoHuan123.mamikey.keyboard` → 同上，勾选**同一个** Group  
 
 2. **Profiles → 删除旧的 App Store 描述文件**（若有）
 
 3. **新建 2 个 App Store 描述文件**（类型 Distribution → App Store Connect）  
-   - 主 App → Bundle `io.github.YaoHuan123.mamikey`  
+   - 主 App → Bundle `io.github.com.YaoHuan123.mamikey`  
    - 键盘 → Bundle `io.github.YaoHuan123.mamikey.keyboard`  
 
 4. **下载两个 `.mobileprovision`**，上传到 Codemagic：  
@@ -44,7 +44,7 @@ security cms -D -i YourProfile.mobileprovision | grep -A5 application-groups
 
 | 资源 | Identifier |
 |------|------------|
-| 主 App | `io.github.YaoHuan123.mamikey` |
+| 主 App | `io.github.com.YaoHuan123.mamikey` |
 | 键盘扩展 | `io.github.YaoHuan123.mamikey.keyboard` |
 | App Group | `group.io.github.YaoHuan123.mamikey` |
 
@@ -59,7 +59,7 @@ security cms -D -i YourProfile.mobileprovision | grep -A5 application-groups
 
 | Codemagic 引用名 | Bundle ID |
 |------------------|-----------|
-| `mamikey-appstore` | `io.github.YaoHuan123.mamikey` |
+| `mamikey-appstore` | `io.github.com.YaoHuan123.mamikey` |
 | `mamikey-keyboard-appstore` | `io.github.YaoHuan123.mamikey.keyboard` |
 
 ## 3. Codemagic 控制台配置
@@ -123,7 +123,7 @@ git checkout ios   # CI 构建分支
   "app_slug": "mamikey",
   "display_name": "Mami Key",
   "workflow_name": "Mami Key iOS App Store",
-  "bundle_id": "io.github.YaoHuan123.mamikey",
+  "bundle_id": "io.github.com.YaoHuan123.mamikey",
   "api_base_url": "https://hellotita.top/mamikey/api",
   "repo_path": "E:\\apps\\mami key",
   "git_branch": "ios",

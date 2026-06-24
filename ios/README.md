@@ -13,7 +13,7 @@
 
 | Target | Bundle ID |
 |--------|-----------|
-| MamiKey | `io.github.YaoHuan123.mamikey` |
+| MamiKey | `io.github.com.YaoHuan123.mamikey` |
 | MamiKeyKeyboard | `io.github.YaoHuan123.mamikey.keyboard` |
 | App Group | `group.io.github.YaoHuan123.mamikey` |
 

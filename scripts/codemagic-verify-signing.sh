@@ -2,7 +2,7 @@
 # 校验 Codemagic 上的描述文件是否包含 App Groups，且 Bundle ID 正确
 set -euo pipefail
 
-BUNDLE_ID="${BUNDLE_ID:-io.github.YaoHuan123.mamikey}"
+BUNDLE_ID="${BUNDLE_ID:-io.github.com.YaoHuan123.mamikey}"
 BUNDLE_ID_KEYBOARD="${BUNDLE_ID_KEYBOARD:-io.github.YaoHuan123.mamikey.keyboard}"
 APP_GROUP="${APP_GROUP:-group.io.github.YaoHuan123.mamikey}"
 PROFILE_DIR="${HOME}/Library/MobileDevice/Provisioning Profiles"
