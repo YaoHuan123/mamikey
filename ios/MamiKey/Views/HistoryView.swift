@@ -7,11 +7,19 @@ struct HistoryView: View {
     NavigationStack {
       Group {
         if entries.isEmpty {
-          ContentUnavailableView(
-            "暂无历史",
-            systemImage: "clock",
-            description: Text("在键盘中生成回复后会显示在这里")
-          )
+          VStack(spacing: 12) {
+            Image(systemName: "clock")
+              .font(.largeTitle)
+              .foregroundStyle(.secondary)
+            Text("暂无历史")
+              .font(.headline)
+            Text("在键盘中生成回复后会显示在这里")
+              .font(.subheadline)
+              .foregroundStyle(.secondary)
+              .multilineTextAlignment(.center)
+          }
+          .frame(maxWidth: .infinity, maxHeight: .infinity)
+          .padding()
         } else {
           List(entries) { entry in
             VStack(alignment: .leading, spacing: 8) {
