@@ -1,5 +1,43 @@
 # Codemagic 打包指南（参考 hello me）
 
+## 构建失败：requires App Groups provisioning profile
+
+若 Codemagic 报：
+
+> MamiKey requires a provisioning profile with the App Groups feature
+
+说明 **描述文件是在开启 App Groups 之前生成的**，或 **键盘扩展 profile 未上传**。
+
+### 修复步骤（按顺序）
+
+1. **Identifiers → App IDs**  
+   - `io.github.YaoHuan123.mamikey` → Capabilities → **App Groups** 已开启 → 勾选 `group.io.github.YaoHuan123.mamikey`  
+   - `io.github.YaoHuan123.mamikey.keyboard` → 同上，勾选**同一个** Group  
+
+2. **Profiles → 删除旧的 App Store 描述文件**（若有）
+
+3. **新建 2 个 App Store 描述文件**（类型 Distribution → App Store Connect）  
+   - 主 App → Bundle `io.github.YaoHuan123.mamikey`  
+   - 键盘 → Bundle `io.github.YaoHuan123.mamikey.keyboard`  
+
+4. **下载两个 `.mobileprovision`**，上传到 Codemagic：  
+   - `mamikey-appstore`  
+   - `mamikey-keyboard-appstore`  
+
+5. **重新触发构建**（push `ios` 分支或 Codemagic 手动 Start）
+
+### 如何确认 profile 正确
+
+用 Mac 终端检查下载的 profile：
+
+```bash
+security cms -D -i YourProfile.mobileprovision | grep -A5 application-groups
+```
+
+应能看到 `group.io.github.YaoHuan123.mamikey`。
+
+---
+
 ## 1. Apple Developer 准备
 
 在 [Apple Developer](https://developer.apple.com) 创建：

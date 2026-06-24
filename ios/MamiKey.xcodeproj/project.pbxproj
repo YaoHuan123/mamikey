@@ -396,7 +396,7 @@
 				CODE_SIGN_ENTITLEMENTS = MamiKey/MamiKey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TCPBS85F56;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MamiKey/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Mami Key";
@@ -422,7 +422,7 @@
 				CODE_SIGN_ENTITLEMENTS = MamiKey/MamiKey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TCPBS85F56;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MamiKey/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Mami Key";
@@ -448,7 +448,7 @@
 				CODE_SIGN_ENTITLEMENTS = MamiKeyKeyboard/MamiKeyKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TCPBS85F56;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MamiKeyKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,7 +473,7 @@
 				CODE_SIGN_ENTITLEMENTS = MamiKeyKeyboard/MamiKeyKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TCPBS85F56;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MamiKeyKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
