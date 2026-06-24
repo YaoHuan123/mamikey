@@ -1,7 +1,7 @@
 import Foundation
 
 public enum SharedSettings {
-  public static let appGroupID = "group.io.github.YaoHuan123.mami-key"
+  public static let appGroupID = "group.io.github.YaoHuan123.mamikey"
 
   private static var defaults: UserDefaults? {
     UserDefaults(suiteName: appGroupID)

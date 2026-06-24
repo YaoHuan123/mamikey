@@ -21,7 +21,7 @@
 - [x] 主 App Target `MamiKey`
 - [x] 键盘扩展 Target `MamiKeyKeyboard`
 - [x] 共享代码 `MamiKeyShared`
-- [x] App Group `group.io.github.YaoHuan123.mami-key`
+- [x] App Group `group.io.github.YaoHuan123.mamikey`
 
 ### 共享层（MamiKeyShared）
 - [x] 场景 / 子场景 / 风格模型

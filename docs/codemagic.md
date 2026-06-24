@@ -6,13 +6,13 @@
 
 | 资源 | Identifier |
 |------|------------|
-| 主 App | `io.github.YaoHuan123.mami-key` |
-| 键盘扩展 | `io.github.YaoHuan123.mami-key.keyboard` |
-| App Group | `group.io.github.YaoHuan123.mami-key` |
+| 主 App | `io.github.YaoHuan123.mamikey` |
+| 键盘扩展 | `io.github.YaoHuan123.mamikey.keyboard` |
+| App Group | `group.io.github.YaoHuan123.mamikey` |
 
 **Capabilities（两个 App ID 都要）：**
 
-- App Groups → 勾选 `group.io.github.YaoHuan123.mami-key`
+- App Groups → 勾选 `group.io.github.YaoHuan123.mamikey`
 - 键盘扩展额外需要：**App Groups**（与主 App 同一 Group）
 
 ## 2. 描述文件（Provisioning Profiles）
@@ -21,8 +21,8 @@
 
 | Codemagic 引用名 | Bundle ID |
 |------------------|-----------|
-| `mamikey-appstore` | `io.github.YaoHuan123.mami-key` |
-| `mamikey-keyboard-appstore` | `io.github.YaoHuan123.mami-key.keyboard` |
+| `mamikey-appstore` | `io.github.YaoHuan123.mamikey` |
+| `mamikey-keyboard-appstore` | `io.github.YaoHuan123.mamikey.keyboard` |
 
 ## 3. Codemagic 控制台配置
 
@@ -38,7 +38,7 @@
 3. **Applications → Add application**
    - 连接 Git 仓库（GitHub / GitLab 等）
    - 选择 `codemagic.yaml`
-   - Workflow：`mami-key-ios-appstore`
+   - Workflow：`mamikey-ios-appstore`
 
 ## 4. Git 仓库
 
@@ -82,19 +82,19 @@ git checkout ios   # CI 构建分支
 
 ```json
 {
-  "app_slug": "mami-key",
+  "app_slug": "mamikey",
   "display_name": "Mami Key",
   "workflow_name": "Mami Key iOS App Store",
-  "bundle_id": "io.github.YaoHuan123.mami-key",
-  "api_base_url": "https://hellotita.top/mami-key/api",
+  "bundle_id": "io.github.YaoHuan123.mamikey",
+  "api_base_url": "https://hellotita.top/mamikey/api",
   "repo_path": "E:\\apps\\mami key",
   "git_branch": "ios",
-  "codemagic_workflow_id": "mami-key-ios-appstore",
+  "codemagic_workflow_id": "mamikey-ios-appstore",
   "codemagic_profile": "mamikey-appstore",
   "codemagic_certificate": "app-common",
   "asc_integration": "huanqi-asc",
-  "privacy_policy_url": "https://hellotita.top/mami-key/privacy",
-  "support_url": "https://hellotita.top/mami-key/support",
+  "privacy_policy_url": "https://hellotita.top/mamikey/privacy",
+  "support_url": "https://hellotita.top/mamikey/support",
   "status": "立项"
 }
 ```

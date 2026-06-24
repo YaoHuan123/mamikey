@@ -13,9 +13,9 @@
 
 | Target | Bundle ID |
 |--------|-----------|
-| MamiKey | `io.github.YaoHuan123.mami-key` |
-| MamiKeyKeyboard | `io.github.YaoHuan123.mami-key.keyboard` |
-| App Group | `group.io.github.YaoHuan123.mami-key` |
+| MamiKey | `io.github.YaoHuan123.mamikey` |
+| MamiKeyKeyboard | `io.github.YaoHuan123.mamikey.keyboard` |
+| App Group | `group.io.github.YaoHuan123.mamikey` |
 
 ## 打开工程
 
@@ -27,7 +27,7 @@ open ios/MamiKey.xcodeproj
 
 1. 在 Xcode 中选择 **MamiKey** 与 **MamiKeyKeyboard** 两个 Target
 2. 将 **Signing & Capabilities** 中的 Team 改为你的开发团队
-3. 确认两个 Target 均已启用 App Group：`group.io.github.YaoHuan123.mami-key`
+3. 确认两个 Target 均已启用 App Group：`group.io.github.YaoHuan123.mamikey`
 4. 若 Bundle ID 冲突，需与 `codemagic.yaml` 中 `BUNDLE_ID` 保持一致
 
 ## 运行

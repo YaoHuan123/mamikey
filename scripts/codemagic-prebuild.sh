@@ -10,9 +10,9 @@ EXT_PLIST="$IOS_DIR/MamiKeyKeyboard/Info.plist"
 APP_ENT="$IOS_DIR/MamiKey/MamiKey.entitlements"
 EXT_ENT="$IOS_DIR/MamiKeyKeyboard/MamiKeyKeyboard.entitlements"
 
-BUNDLE_ID="${BUNDLE_ID:-io.github.YaoHuan123.mami-key}"
-BUNDLE_ID_KEYBOARD="${BUNDLE_ID_KEYBOARD:-io.github.YaoHuan123.mami-key.keyboard}"
-APP_GROUP="${APP_GROUP:-group.io.github.YaoHuan123.mami-key}"
+BUNDLE_ID="${BUNDLE_ID:-io.github.YaoHuan123.mamikey}"
+BUNDLE_ID_KEYBOARD="${BUNDLE_ID_KEYBOARD:-io.github.YaoHuan123.mamikey.keyboard}"
+APP_GROUP="${APP_GROUP:-group.io.github.YaoHuan123.mamikey}"
 APP_VERSION="${APP_VERSION:-0.1.0}"
 BUILD_NUMBER="${BUILD_NUMBER:-${PROJECT_BUILD_NUMBER:-1}}"
 
@@ -23,8 +23,8 @@ echo "APP_GROUP=$APP_GROUP"
 echo "APP_VERSION=$APP_VERSION BUILD_NUMBER=$BUILD_NUMBER"
 
 # Bundle ID（先替换较长的 keyboard，避免子串误伤）
-sed -i.bak "s|io.github.YaoHuan123.mami-key.keyboard|${BUNDLE_ID_KEYBOARD}|g" "$PBXPROJ"
-sed -i.bak "s|io.github.YaoHuan123.mami-key|${BUNDLE_ID}|g" "$PBXPROJ"
+sed -i.bak "s|io.github.YaoHuan123.mamikey.keyboard|${BUNDLE_ID_KEYBOARD}|g" "$PBXPROJ"
+sed -i.bak "s|io.github.YaoHuan123.mamikey|${BUNDLE_ID}|g" "$PBXPROJ"
 rm -f "$PBXPROJ.bak"
 
 /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $APP_VERSION" "$APP_PLIST"
@@ -41,7 +41,7 @@ done
 # 同步 SharedSettings 中的 App Group 常量
 SHARED_SETTINGS="$IOS_DIR/MamiKeyShared/Services/SharedSettings.swift"
 if [ -f "$SHARED_SETTINGS" ]; then
-  sed -i.bak "s|group\\.io\\.github\\.YaoHuan123\\.mami-key|${APP_GROUP}|g" "$SHARED_SETTINGS"
+  sed -i.bak "s|group\\.io\\.github\\.YaoHuan123\\.mamikey|${APP_GROUP}|g" "$SHARED_SETTINGS"
   rm -f "$SHARED_SETTINGS.bak"
 fi
 
