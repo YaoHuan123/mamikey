@@ -5,7 +5,7 @@ import sys
 BASE = r"E:\ios调试和上线材料\mamikey"
 FILES = {
     "mamikeyappstore.mobileprovision": "io.github.com.YaoHuan123.mamikey",
-    "mamikeykeyboardappstore.mobileprovision": "io.github.YaoHuan123.mamikey.keyboard",
+    "mamikeykeyboardappstore.mobileprovision": "io.github.com.YaoHuan123.mamikey.keyboard",
 }
 APP_GROUP = "group.io.github.YaoHuan123.mamikey"
 CODEMagic_REF = {

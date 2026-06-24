@@ -3,7 +3,7 @@
 set -euo pipefail
 
 BUNDLE_ID="${BUNDLE_ID:-io.github.com.YaoHuan123.mamikey}"
-BUNDLE_ID_KEYBOARD="${BUNDLE_ID_KEYBOARD:-io.github.YaoHuan123.mamikey.keyboard}"
+BUNDLE_ID_KEYBOARD="${BUNDLE_ID_KEYBOARD:-io.github.com.YaoHuan123.mamikey.keyboard}"
 APP_GROUP="${APP_GROUP:-group.io.github.YaoHuan123.mamikey}"
 PROFILE_DIR="${HOME}/Library/MobileDevice/Provisioning Profiles"
 

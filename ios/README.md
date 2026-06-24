@@ -14,7 +14,7 @@
 | Target | Bundle ID |
 |--------|-----------|
 | MamiKey | `io.github.com.YaoHuan123.mamikey` |
-| MamiKeyKeyboard | `io.github.YaoHuan123.mamikey.keyboard` |
+| MamiKeyKeyboard | `io.github.com.YaoHuan123.mamikey.keyboard` |
 | App Group | `group.io.github.YaoHuan123.mamikey` |
 
 ## 打开工程

@@ -26,7 +26,7 @@ workflows:
       vars:
         DEVELOPMENT_TEAM: TCPBS85F56
         BUNDLE_ID: io.github.com.YaoHuan123.mamikey         # 4. 主 App Bundle ID
-        BUNDLE_ID_KEYBOARD: io.github.YaoHuan123.mamikey.keyboard
+        BUNDLE_ID_KEYBOARD: io.github.com.YaoHuan123.mamikey.keyboard
         APP_GROUP: group.io.github.YaoHuan123.mamikey
         XCODE_SCHEME: MamiKey
         XCODE_PROJECT_DIR: ios

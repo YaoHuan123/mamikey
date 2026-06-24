@@ -12,13 +12,13 @@
 
 1. **Identifiers → App IDs**  
    - `io.github.com.YaoHuan123.mamikey` → Capabilities → **App Groups** 已开启 → 勾选 `group.io.github.YaoHuan123.mamikey`  
-   - `io.github.YaoHuan123.mamikey.keyboard` → 同上，勾选**同一个** Group  
+   - `io.github.com.YaoHuan123.mamikey.keyboard` → 同上，勾选**同一个** Group  
 
 2. **Profiles → 删除旧的 App Store 描述文件**（若有）
 
 3. **新建 2 个 App Store 描述文件**（类型 Distribution → App Store Connect）  
    - 主 App → Bundle `io.github.com.YaoHuan123.mamikey`  
-   - 键盘 → Bundle `io.github.YaoHuan123.mamikey.keyboard`  
+   - 键盘 → Bundle `io.github.com.YaoHuan123.mamikey.keyboard`  
 
 4. **下载两个 `.mobileprovision`**，上传到 Codemagic：  
    - `mamikey-appstore`  
@@ -38,14 +38,25 @@ security cms -D -i YourProfile.mobileprovision | grep -A5 application-groups
 
 ---
 
-## 1. Apple Developer 准备
+## 键盘扩展 Bundle ID 规则
+
+Apple 要求：**键盘扩展的 Bundle ID 必须以主 App 的 Bundle ID 为前缀**。
+
+| Target | Bundle ID |
+|--------|-----------|
+| 主 App | `io.github.com.YaoHuan123.mamikey` |
+| 键盘 | `io.github.com.YaoHuan123.mamikey.keyboard` ✅ |
+
+❌ 错误示例：`io.github.YaoHuan123.mamikey.keyboard`（缺少 `.com`，与主 App 前缀不一致）
+
+---
 
 在 [Apple Developer](https://developer.apple.com) 创建：
 
 | 资源 | Identifier |
 |------|------------|
 | 主 App | `io.github.com.YaoHuan123.mamikey` |
-| 键盘扩展 | `io.github.YaoHuan123.mamikey.keyboard` |
+| 键盘扩展 | `io.github.com.YaoHuan123.mamikey.keyboard` |
 | App Group | `group.io.github.YaoHuan123.mamikey` |
 
 **Capabilities（两个 App ID 都要）：**
@@ -60,7 +71,7 @@ security cms -D -i YourProfile.mobileprovision | grep -A5 application-groups
 | Codemagic 引用名 | Bundle ID |
 |------------------|-----------|
 | `mamikey-appstore` | `io.github.com.YaoHuan123.mamikey` |
-| `mamikey-keyboard-appstore` | `io.github.YaoHuan123.mamikey.keyboard` |
+| `mamikey-keyboard-appstore` | `io.github.com.YaoHuan123.mamikey.keyboard` |
 
 ## 3. Codemagic 控制台配置
 
