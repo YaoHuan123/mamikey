@@ -104,7 +104,48 @@ cd mamikey
 git checkout ios   # CI 构建分支
 ```
 
-## 5. 构建流程说明
+## 5. App Store Connect 创建应用（上传 TestFlight 前必做）
+
+若 Codemagic 报：
+
+> Cannot determine the Apple ID from Bundle ID 'io.github.com.YaoHuan123.mamikey'
+
+说明 **IPA 已构建成功**，但 App Store Connect 里还没有这个 Bundle ID 的应用记录。
+
+### 操作步骤
+
+1. 打开 [App Store Connect](https://appstoreconnect.apple.com) → **我的 App** → **+** → **新建 App**
+2. 填写：
+   - 平台：**iOS**
+   - 名称：**Mami Key**
+   - 主要语言：**简体中文**
+   - Bundle ID：选择 `io.github.com.YaoHuan123.mamikey`
+   - SKU：`mamikey`（任意唯一字符串）
+   - 用户访问权限：完全访问
+3. 创建后进入 **App 信息**，记下 **Apple ID**（纯数字，如 `6782323942`）
+4. （可选）在 `codemagic.yaml` 的 `publishing` 里填入：
+
+```yaml
+app_id: 你的AppleID数字
+```
+
+或在 Codemagic 环境变量设置 `ASC_APP_ID`。
+
+5. 重新触发构建，或仅重新运行 **Publishing** 步骤
+
+### 暂时跳过自动上传
+
+若先只想验证能打出 IPA，可临时改：
+
+```yaml
+submit_to_testflight: false
+```
+
+IPA 仍会出现在 Codemagic **Artifacts** 里，可手动用 Transporter 上传。
+
+---
+
+## 6. 构建流程说明
 
 `codemagic.yaml` 执行步骤：
 
@@ -115,7 +156,7 @@ git checkout ios   # CI 构建分支
 
 无需 Node.js / CocoaPods（原生 Swift 工程）。
 
-## 6. 与 hello me 的差异
+## 7. 与 hello me 的差异
 
 | 项目 | hello me | Mami Key |
 |------|----------|----------|
@@ -125,7 +166,7 @@ git checkout ios   # CI 构建分支
 | 构建命令 | `--workspace App.xcworkspace` | `--project MamiKey.xcodeproj` |
 | 描述文件 | 1 个 | 2 个（主 App + 键盘扩展） |
 
-## 7. 台账登记（上线助手）
+## 8. 台账登记（上线助手）
 
 在 `E:\ios app 上线助手\app-registry.json` 新增：
 
@@ -150,7 +191,7 @@ git checkout ios   # CI 构建分支
 
 键盘扩展描述文件 `mamikey-keyboard-appstore` 需在 Codemagic 单独上传（台账字段可写在 review_notes）。
 
-## 8. 常见问题
+## 9. 常见问题
 
 **Q: 键盘扩展签名失败？**  
 A: 确认两个描述文件都已上传，且 App Group 在两个 App ID 上均已启用。
